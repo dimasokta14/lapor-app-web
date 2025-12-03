@@ -14,7 +14,7 @@ const ComplaintList = () => {
     {
       id: 'LGWP21426501',
       title: 'Permohonan lampu lalu lintas',
-      description: 'Assalamualaikum yth kepada dishub Jateng jalan ruwas provinsi wonotunggal aduan lgwp21426501 permohonan lampu lalu lintas...',
+      description: 'Assalamualaikum yth kepada dishub jalan ruwas provinsi wonotunggal aduan lgwp21426501 permohonan lampu lalu lintas...',
       location: 'Wonotunggal',
       date: '3 hari yang lalu',
       status: 'Menunggu Review',

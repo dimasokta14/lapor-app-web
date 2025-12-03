@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-brand">LaporGub!</h3>
+            <h3 className="footer-brand">LaporGaruda!</h3>
             <p className="footer-description">
               Layanan Aspirasi dan Pengaduan Online Rakyat - Portal resmi untuk menerima aspirasi dan pengaduan masyarakat.
             </p>

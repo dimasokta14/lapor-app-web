@@ -17,7 +17,7 @@ const JNNSection = () => {
           <div className="jnn-text">
             <div className="jnn-badge">Aplikasi Mobile</div>
             <h2 className="jnn-title">JNN</h2>
-            <h3 className="jnn-subtitle">Jateng Ngopeni Nglakoni</h3>
+            <h3 className="jnn-subtitle">Ngopeni Nglakoni</h3>
             <p className="jnn-description">
               Download aplikasi JNN untuk melaporkan keluhan dan masalah
               dengan lebih mudah dan praktis!
