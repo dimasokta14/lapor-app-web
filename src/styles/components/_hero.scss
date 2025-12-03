@@ -1,0 +1,127 @@
+.hero {
+  position: relative;
+  min-height: 70vh;
+  @include flex-center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  text-align: center;
+  color: $text-primary;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+
+  @include mobile {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  line-height: 1.5;
+
+  @include mobile {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+}
+
+.hero-description {
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+  line-height: 1.6;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+.hero-actions {
+  @include flex-center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  @include grid-responsive;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-lg;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $shadow-xl;
+  }
+
+  @include mobile {
+    padding: 30px 20px;
+  }
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 900;
+  @include text-gradient;
+  -webkit-text-fill-color: #fff;
+  margin-bottom: 10px;
+
+  @include mobile {
+    font-size: 36px;
+  }
+}
+
+.stat-label {
+  font-size: 18px;
+  color: $bg-secondary;
+  font-weight: 600;
+}

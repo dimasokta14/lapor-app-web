@@ -1,0 +1,182 @@
+// Responsive Breakpoints
+@mixin mobile {
+  @media (max-width: #{$tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: #{$tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$tablet}) and (max-width: #{$laptop - 1px}) {
+    @content;
+  }
+}
+
+// Flexbox Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Button Mixins
+@mixin button-base {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: $radius-sm;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $transition-base;
+  text-decoration: none;
+  display: inline-block;
+}
+
+@mixin button-primary {
+  @include button-base;
+  background: linear-gradient(135deg, $primary-gradient-start, $primary-gradient-end);
+  color: $text-primary;
+
+  &:hover {
+    background: $primary-light;
+    transform: translateY(-1px);
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: transparent;
+  color: $primary-light;
+  border: 2px solid $primary-light;
+
+  &:hover {
+    background-color: $primary-light;
+    color: $text-primary;
+  }
+}
+
+// Card Mixins
+@mixin card {
+  background: $overlay-light;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-lg;
+  transition: all $transition-base;
+}
+
+@mixin card-hover {
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+// Grid Mixins
+@mixin grid($columns: 1, $gap: $spacing-lg) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-responsive {
+  display: grid;
+  gap: $spacing-lg;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include laptop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Container Mixin
+@mixin container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+
+  @include tablet {
+    padding: 0 $spacing-2xl;
+  }
+
+  @include laptop {
+    padding: 0 $spacing-3xl;
+  }
+}
+
+// Text Gradients
+@mixin text-gradient($start: $primary-gradient-start, $end: $primary-gradient-end) {
+  background: linear-gradient(135deg, $start, $end);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Animations
+@mixin fade-in($duration: $transition-base) {
+  animation: fadeIn $duration ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin float($duration: 3s) {
+  animation: float $duration ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

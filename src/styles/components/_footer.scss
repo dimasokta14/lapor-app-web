@@ -1,0 +1,180 @@
+.footer {
+  background: linear-gradient(135deg, $bg-primary 0%, $primary-dark 100%);
+  color: $text-primary;
+  padding: 60px 0 20px;
+
+  @include mobile {
+    padding: 40px 0 20px;
+  }
+}
+
+.footer-content {
+  @include grid(3, 40px);
+  grid-template-columns: 2fr 1fr 1fr;
+  margin-bottom: 40px;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+.footer-section {
+  @include flex-column;
+  gap: 20px;
+
+  @include mobile {
+    gap: 15px;
+  }
+}
+
+.footer-brand {
+  font-size: 32px;
+  font-weight: 900;
+  @include text-gradient;
+  margin-bottom: 10px;
+
+  @include mobile {
+    font-size: 28px;
+  }
+}
+
+.footer-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: $text-light;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  @include flex-center;
+  color: $text-primary;
+  transition: all $transition-base;
+
+  &:hover {
+    background: linear-gradient(135deg, $primary-gradient-start, $primary-gradient-end);
+    transform: translateY(-3px);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  list-style: none;
+  @include flex-column;
+  gap: 12px;
+
+  a {
+    color: $text-light;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all $transition-base;
+    display: inline-block;
+
+    &:hover {
+      color: $text-accent;
+      padding-left: 5px;
+    }
+  }
+}
+
+.footer-contacts {
+  list-style: none;
+  @include flex-column;
+  gap: 15px;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: $text-light;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  svg {
+    flex-shrink: 0;
+    color: $text-accent;
+    margin-top: 2px;
+  }
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+
+  p {
+    font-size: 14px;
+    color: $text-light;
+    margin: 5px 0;
+  }
+}
+
+.footer-credit {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.footer-institutions {
+  margin-bottom: 30px;
+  text-align: center;
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: $text-light;
+  }
+}
+
+.institutions-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  @include mobile {
+    gap: 15px;
+  }
+}
+
+.institution-logo {
+  font-size: 32px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all $transition-base;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  @include mobile {
+    font-size: 24px;
+    padding: 8px;
+  }
+}

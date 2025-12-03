@@ -1,0 +1,107 @@
+.reporting-process {
+  background: $text-primary;
+  padding: 80px 0;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  position: relative;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  position: relative;
+  max-width: 200px;
+
+  @include mobile {
+    max-width: 100%;
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, $primary-gradient-start, $primary-gradient-end);
+  border-radius: 50%;
+  @include flex-center;
+  font-size: 24px;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+
+  @include mobile {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+.step-description {
+  font-size: 14px;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.step-connector {
+  position: absolute;
+  top: 30px;
+  left: calc(100% - 30px);
+  width: calc(100% - 60px);
+  height: 2px;
+  background: linear-gradient(to right, $primary-light, $primary-base);
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: -3px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid $primary-base;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.process-cta {
+  text-align: center;
+  margin-top: 40px;
+}

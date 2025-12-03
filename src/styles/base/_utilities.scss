@@ -1,0 +1,147 @@
+// Container utilities
+.container {
+  @include container;
+}
+
+// Flexbox utilities
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// Grid utilities
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+}
+
+.grid-1 { grid-template-columns: 1fr; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@include mobile {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include tablet-only {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Display utilities
+.hidden {
+  display: none;
+}
+
+@include mobile-only {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+@include tablet {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+// Spacing utilities
+.p-1 { padding: $spacing-xs; }
+.p-2 { padding: $spacing-sm; }
+.p-3 { padding: $spacing-md; }
+.p-4 { padding: $spacing-lg; }
+.p-6 { padding: $spacing-xl; }
+.p-8 { padding: $spacing-2xl; }
+
+.m-1 { margin: $spacing-xs; }
+.m-2 { margin: $spacing-sm; }
+.m-3 { margin: $spacing-md; }
+.m-4 { margin: $spacing-lg; }
+.m-6 { margin: $spacing-xl; }
+.m-8 { margin: $spacing-2xl; }
+
+.mt-4 { margin-top: $spacing-lg; }
+.mb-4 { margin-bottom: $spacing-lg; }
+.ml-4 { margin-left: $spacing-lg; }
+.mr-4 { margin-right: $spacing-lg; }
+
+// Background utilities
+.bg-primary { background-color: $bg-primary; }
+.bg-secondary { background-color: $bg-secondary; }
+.bg-tertiary { background-color: $bg-tertiary; }
+
+// Button utilities
+.btn {
+  @include button-base;
+}
+
+.btn-primary {
+  @include button-primary;
+}
+
+.btn-secondary {
+  @include button-secondary;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+// Animation utilities
+.fade-in {
+  @include fade-in;
+}
+
+.floating {
+  @include float;
+}
+
+// Section utilities
+.section {
+  padding: 60px 0;
+
+  @include mobile {
+    padding: 40px 0;
+  }
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #2d3748;
+
+  @include mobile {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+}

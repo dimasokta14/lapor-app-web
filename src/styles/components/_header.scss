@@ -1,0 +1,117 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: $text-primary;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all $transition-base;
+
+  &.scrolled {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.header-content {
+  @include flex-between;
+  padding: 12px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: $spacing-lg;
+  padding-right: $spacing-lg;
+}
+
+.logo h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: $primary-light;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: #2d3748;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color $transition-base;
+    position: relative;
+    padding: 8px 0;
+
+    &:hover {
+      color: $primary-light;
+    }
+  }
+
+  @include mobile {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: $bg-primary;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: $shadow-lg;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all $transition-base;
+    pointer-events: none;
+
+    &.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  @include mobile {
+    .btn {
+      display: none;
+    }
+  }
+}
+
+.user-name {
+  font-size: 14px;
+  color: $bg-primary;
+  font-weight: 600;
+  white-space: nowrap;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background: $primary-light;
+    border-radius: 2px;
+    transition: all $transition-base;
+  }
+
+  @include mobile {
+    display: flex;
+  }
+}
