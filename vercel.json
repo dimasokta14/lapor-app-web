@@ -5,16 +5,10 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "regions": ["sin1"],
-  "env": [
-    {
-      "key": "VITE_API_URL",
-      "value": "@vite_api_url"
-    },
-    {
+  "env":     {
       "key": "VITE_APP_NAME",
       "value": "LaporGaruda"
-    }
-  ],
+  },
   "functions": {
     "api/**/*.ts": {
       "memory": 1024,
