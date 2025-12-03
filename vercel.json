@@ -15,7 +15,6 @@
       "value": "LaporGaruda"
     }
   ],
-  "envPrefix": "VITE_",
   "functions": {
     "api/**/*.ts": {
       "memory": 1024,
