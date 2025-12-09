@@ -163,3 +163,5 @@ cypress/videos/
 .env.production
 .env.staging
 config/secrets.js
+.vercel
+.env*.local

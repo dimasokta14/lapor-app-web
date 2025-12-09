@@ -5,16 +5,6 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "regions": ["sin1"],
-  "env":     {
-      "key": "VITE_APP_NAME",
-      "value": "LaporGaruda"
-  },
-  "functions": {
-    "api/**/*.ts": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/assets/(.*)",

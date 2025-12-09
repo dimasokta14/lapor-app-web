@@ -1,4 +1,6 @@
 // Container utilities
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 .container {
   @include container;
 }

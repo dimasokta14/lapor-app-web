@@ -1,27 +1,26 @@
 // Abstracts
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
 
 // Base
-@import 'base/reset';
-@import 'base/typography';
-@import 'base/utilities';
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/utilities';
 
 // Components
-@import 'components/header';
-@import 'components/hero';
-@import 'components/report-classification';
-@import 'components/reporting-process';
-@import 'components/statistics-section';
-@import 'components/connected-institutions';
-@import 'components/track-complaint';
-@import 'components/jnn-section';
-@import 'components/create-complaint';
-@import 'components/other-channels';
-@import 'components/complaint-list';
-@import 'components/login';
-@import 'components/report-form-modal';
-@import 'components/footer';
+@use 'components/header';
+@use 'components/hero';
+@use 'components/report-classification';
+@use 'components/reporting-process';
+@use 'components/complaints-overview';
+@use 'components/alternative-channels';
+@use 'components/recent-complaints';
+@use 'components/login';
+@use 'components/report-form-modal';
+@use 'components/footer';
 
 // Layout
-@import 'layout/app';
+@use 'layout/app';
+
+// Pages
+@use 'pages/browse';

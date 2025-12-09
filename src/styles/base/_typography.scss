@@ -1,4 +1,6 @@
 // Typography utilities
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 .text-center {
   text-align: center;
 }

@@ -1,4 +1,6 @@
 // Report Form Modal Styles
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .report-form-modal {
   position: fixed;

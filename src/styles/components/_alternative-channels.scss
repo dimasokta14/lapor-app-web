@@ -1,0 +1,177 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.alternative-channels {
+  background: #f8f9fa;
+  padding: 80px 0;
+
+  @include mobile {
+    padding: 60px 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: $primary-light;
+  margin-bottom: 15px;
+
+  @include mobile {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+.channels-grid {
+  @include grid(3, 30px);
+
+  @include tablet-only {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.channel-card {
+  background: white;
+  border-radius: $radius-lg;
+  padding: 40px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-base;
+  border: 2px solid transparent;
+
+  @include mobile {
+    padding: 30px 20px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-xl;
+    border-color: $primary-light;
+
+    .channel-icon {
+      background: linear-gradient(135deg, $primary-gradient-start, $primary-gradient-end);
+      color: white;
+      transform: scale(1.1);
+    }
+  }
+
+  &:focus {
+    outline: 2px solid $primary-light;
+    outline-offset: 2px;
+  }
+}
+
+.channel-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(153, 0, 0, 0.1);
+  @include flex-center;
+  margin: 0 auto 20px;
+  color: $primary-light;
+  transition: all $transition-base;
+
+  @include mobile {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+
+    @include mobile {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.channel-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+
+  @include mobile {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+}
+
+.channel-contact {
+  font-size: 18px;
+  font-weight: 600;
+  color: $primary-light;
+  margin-bottom: 10px;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+.channel-description {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.5;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.channels-note {
+  margin-top: 50px;
+  text-align: center;
+  padding: 25px;
+  background: rgba(153, 0, 0, 0.05);
+  border-radius: $radius-lg;
+  border-left: 4px solid $primary-light;
+
+  @include mobile {
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  strong {
+    color: $primary-light;
+    font-weight: 600;
+  }
+}

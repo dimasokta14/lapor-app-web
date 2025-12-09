@@ -1,3 +1,6 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .hero {
   position: relative;
   min-height: 70vh;
@@ -26,11 +29,28 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+
+  @include tablet {
+    gap: 40px;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 .hero-content {
-  text-align: center;
   color: $text-primary;
-  max-width: 800px;
-  margin: 0 auto;
+
+  @include mobile {
+    text-align: center;
+  }
 }
 
 .hero-title {
@@ -49,12 +69,26 @@
 .hero-subtitle {
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   opacity: 0.95;
   line-height: 1.5;
 
   @include mobile {
     font-size: 18px;
+    margin-bottom: 16px;
+  }
+}
+
+.hero-tagline {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 40px;
+  color: $text-accent;
+  line-height: 1.4;
+
+  @include mobile {
+    font-size: 16px;
     margin-bottom: 32px;
   }
 }
@@ -124,4 +158,118 @@
   font-size: 18px;
   color: $bg-secondary;
   font-weight: 600;
+}
+
+// Track Complaint Card in Hero
+.hero-track-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: $shadow-xl;
+  backdrop-filter: blur(10px);
+
+  @include mobile {
+    padding: 30px;
+  }
+}
+
+.track-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $primary-gradient-start, $primary-gradient-end);
+  @include flex-center;
+  margin: 0 auto 20px;
+  color: white;
+
+  @include mobile {
+    width: 70px;
+    height: 70px;
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+
+    @include mobile {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.track-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: $primary-light;
+  text-align: center;
+  margin-bottom: 12px;
+
+  @include mobile {
+    font-size: 22px;
+  }
+}
+
+.track-description {
+  font-size: 16px;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 25px;
+  line-height: 1.5;
+
+  @include mobile {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.track-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include mobile {
+    gap: 12px;
+  }
+}
+
+.track-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all $transition-base;
+
+  @include mobile {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary-light;
+    box-shadow: 0 0 0 3px rgba(153, 0, 0, 0.08);
+  }
+
+  &::placeholder {
+    color: #94a3b8;
+  }
+}
+
+.track-button {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 600;
+
+  @include mobile {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 }

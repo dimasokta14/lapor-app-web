@@ -189,7 +189,7 @@ const ReportFormModal = () => {
             {/* Target Institution */}
             <div className="form-group">
               <label htmlFor="targetInstitution" className="form-label">
-                Ketik Lokasi Kejadian <span className="required">*</span>
+                Instansi Tujuan <span className="required">*</span>
               </label>
               <select
                 id="targetInstitution"

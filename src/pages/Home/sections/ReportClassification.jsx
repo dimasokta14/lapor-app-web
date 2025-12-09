@@ -4,19 +4,19 @@ const ReportClassification = () => {
   const classifications = [
     {
       title: "Pengaduan",
-      description: "Sampaikan keluhan dan masalah yang Anda alami",
+      description: "Laporkan masalah dan keluhan yang perlu ditangani Partai Gerindra",
       icon: "📢",
       count: "8,250"
     },
     {
       title: "Aspirasi",
-      description: "Berikan saran dan usulan untuk kemajuan daerah",
+      description: "Sampaikan ide dan usulan untuk kemajuan Indonesia bersama Gerindra",
       icon: "💡",
       count: "3,150"
     },
     {
       title: "Permintaan Informasi",
-      description: "Akses informasi publik yang Anda butuhkan",
+      description: "Dapatkan informasi publik dan program-program Gerindra",
       icon: "ℹ️",
       count: "1,050"
     }
@@ -25,9 +25,10 @@ const ReportClassification = () => {
   return (
     <section className="report-classification section">
       <div className="container">
-        <h2 className="section-title">Jenis Laporan</h2>
+        <h2 className="section-title">Kategori Layanan Aspirasi</h2>
         <p className="section-subtitle">
-          Pilih kategori laporan yang sesuai dengan kebutuhan Anda
+          Partai Gerindra menyediakan tiga kategori layanan untuk mendengar aspirasi rakyat.
+          Pilih kategori yang sesuai dengan kebutuhan Anda.
         </p>
 
         <div className="classification-grid">
