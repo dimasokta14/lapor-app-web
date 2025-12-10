@@ -7,6 +7,8 @@ import Login from './components/Login';
 import ReportFormModal from './components/ReportFormModal';
 import HomePage from './pages/Home';
 import BrowsePage from './pages/Browse/BrowsePage';
+import DetailPage from './pages/Detail/DetailPage';
+import ProfilePage from './pages/Profile/ProfilePage';
 
 function AppContent() {
   const { showLoginPage } = useContext(AuthContext);
@@ -30,6 +32,8 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/jelajah" element={<BrowsePage />} />
+          <Route path="/detail/:id" element={<DetailPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <Footer />
         <ReportFormModal />

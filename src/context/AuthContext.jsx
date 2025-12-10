@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
         setUser({
           uid: firebaseUser.uid,
           email: firebaseUser.email,
+          name: firebaseUser.displayName || firebaseUser.email?.split('@')[0],
           displayName: firebaseUser.displayName,
           photoURL: firebaseUser.photoURL,
           emailVerified: firebaseUser.emailVerified,

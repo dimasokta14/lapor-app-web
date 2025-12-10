@@ -539,6 +539,7 @@
 }
 
 .btn-detail {
+  display: inline-block;
   padding: 8px 18px;
   background: transparent;
   color: $primary-light;
@@ -546,6 +547,7 @@
   border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
   transition: all $transition-base;
 

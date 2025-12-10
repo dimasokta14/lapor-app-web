@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { mockComplaints } from '../../data/mockComplaints';
 
 const BrowsePage = () => {
@@ -343,7 +344,7 @@ const BrowsePage = () => {
 
                   <div className="card-footer">
                     <span className="complaint-id">Kode: {complaint.id}</span>
-                    <button className="btn-detail">Lihat Detail</button>
+                    <Link to={`/detail/${complaint.id}`} className="btn-detail">Lihat Detail</Link>
                   </div>
                 </div>
               ))}
