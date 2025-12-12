@@ -118,8 +118,16 @@ const Login = () => {
               <div className="demo-content">
                 <strong>Akun Demo:</strong>
                 <div className="demo-credentials">
-                  <span>Email: <code>demo@gerindra.com</code></span>
-                  <span>Password: <code>demo123</code></span>
+                  <div className="demo-account">
+                    <span className="demo-label">Admin:</span>
+                    <span>Email: <code>admin@gerindra.com</code></span>
+                    <span>Password: <code>admin123</code></span>
+                  </div>
+                  <div className="demo-account">
+                    <span className="demo-label">User:</span>
+                    <span>Email: <code>user@gerindra.com</code></span>
+                    <span>Password: <code>user123</code></span>
+                  </div>
                 </div>
               </div>
             </div>

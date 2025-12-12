@@ -12,13 +12,25 @@ import {
 import { auth } from '../config/firebase';
 
 // Dummy account credentials
-const DUMMY_ACCOUNT = {
-  email: 'demo@gerindra.com',
-  password: 'demo123',
+const ADMIN_ACCOUNT = {
+  email: 'admin@gerindra.com',
+  password: 'admin123',
   user: {
-    uid: 'dummy-user-001',
-    email: 'demo@gerindra.com',
-    displayName: 'Demo User Gerindra',
+    uid: 'admin-001',
+    email: 'admin@gerindra.com',
+    displayName: 'Admin Gerindra',
+    photoURL: null,
+    emailVerified: true,
+  }
+};
+
+const USER_ACCOUNT = {
+  email: 'user@gerindra.com',
+  password: 'user123',
+  user: {
+    uid: 'user-001',
+    email: 'user@gerindra.com',
+    displayName: 'User Gerindra',
     photoURL: null,
     emailVerified: true,
   }
@@ -53,18 +65,33 @@ export const authService = {
   },
 
   signIn: async (email, password) => {
-    // Check for dummy account first
-    if (email === DUMMY_ACCOUNT.email && password === DUMMY_ACCOUNT.password) {
-      // Store dummy user in localStorage
-      localStorage.setItem(DUMMY_AUTH_KEY, JSON.stringify(DUMMY_ACCOUNT.user));
+    // Check for admin account
+    if (email === ADMIN_ACCOUNT.email && password === ADMIN_ACCOUNT.password) {
+      // Store admin user in localStorage
+      localStorage.setItem(DUMMY_AUTH_KEY, JSON.stringify(ADMIN_ACCOUNT.user));
 
       // Trigger auth state change manually
-      window.dispatchEvent(new CustomEvent('dummyAuthChange', { detail: DUMMY_ACCOUNT.user }));
+      window.dispatchEvent(new CustomEvent('dummyAuthChange', { detail: ADMIN_ACCOUNT.user }));
 
       return {
         success: true,
-        user: DUMMY_ACCOUNT.user,
-        message: 'Login successful! (Demo Account)',
+        user: ADMIN_ACCOUNT.user,
+        message: 'Login successful! (Admin Account)',
+      };
+    }
+
+    // Check for user account
+    if (email === USER_ACCOUNT.email && password === USER_ACCOUNT.password) {
+      // Store user in localStorage
+      localStorage.setItem(DUMMY_AUTH_KEY, JSON.stringify(USER_ACCOUNT.user));
+
+      // Trigger auth state change manually
+      window.dispatchEvent(new CustomEvent('dummyAuthChange', { detail: USER_ACCOUNT.user }));
+
+      return {
+        success: true,
+        user: USER_ACCOUNT.user,
+        message: 'Login successful! (User Account)',
       };
     }
 

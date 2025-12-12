@@ -8,6 +8,9 @@ const Header = () => {
   const { isLoggedIn, openLoginPage, logout, user } = useContext(AuthContext);
   const location = useLocation();
 
+  // Check if user is admin
+  const isAdmin = user?.email === 'admin@gerindra.com' || user?.email === 'demo@gerindra.com';
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -65,6 +68,17 @@ const Header = () => {
               >
                 Jelajah Aduan
               </Link>
+
+              {/* Admin link - only show if user is admin */}
+              {isAdmin && (
+                <Link
+                  to="/admin"
+                  className={location.pathname === '/admin' ? 'active' : ''}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Admin
+                </Link>
+              )}
 
               {/* Mobile only auth actions */}
               <div className="nav-mobile-actions">

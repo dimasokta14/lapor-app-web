@@ -9,6 +9,7 @@ import HomePage from './pages/Home';
 import BrowsePage from './pages/Browse/BrowsePage';
 import DetailPage from './pages/Detail/DetailPage';
 import ProfilePage from './pages/Profile/ProfilePage';
+import AdminPage from './pages/Admin/AdminPage';
 
 function AppContent() {
   const { showLoginPage } = useContext(AuthContext);
@@ -34,6 +35,7 @@ function AppContent() {
           <Route path="/jelajah" element={<BrowsePage />} />
           <Route path="/detail/:id" element={<DetailPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
         <Footer />
         <ReportFormModal />
